@@ -1,0 +1,87 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 10px;
+    background-color: #005F99;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav .flip {
+    position: relative;
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: 48px;
+    perspective: 500px;
+}
+
+.nav .flip a {
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+.nav .flip a .front,
+.nav .flip a .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.nav .flip a .front {
+    background-color: #005F99;
+    color: white;
+    transform: rotateX(0) translateZ(24px);
+}
+
+.nav .flip a .back {
+    background-color: #fff;
+    color: #005F99;
+    transform: rotateX(90deg) translateZ(24px);
+}
+
+.nav .flip a:hover {
+    transform: rotateX(-90deg);
+}
+
+.nav .flip a:hover .front {
+    background-color: #000;
+}
+
+.nav .flip a:hover .back {
+    background-color: #505050;
+    color: #ffffff;
+}
+
+.logo-container {
+    flex-shrink: 0; /* Evita que el logo cambie de tamaño */
+    margin-right: auto; /* Empuja el resto de los elementos hacia la derecha */
+}
+
+.logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: auto;
+    cursor: pointer; /* Indica que es clickeable */
+}

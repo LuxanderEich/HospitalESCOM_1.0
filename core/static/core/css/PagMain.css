@@ -1,0 +1,309 @@
+/* Estilos principales de access-links */
+.access-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Los botones se alinearán a la derecha */
+    gap: 20px; /* Espaciado entre botones */
+    margin: 20px 0; /* Separación superior e inferior */
+    padding: 0;
+}
+
+.access-links .flip {
+    position: relative;
+    width: 250px; /* Ajusta el ancho según sea necesario */
+    height: 48px; /* Altura del botón */
+    perspective: 500px; /* Efecto de perspectiva para el flip */
+}
+
+.access-links .flip a {
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+}
+
+.access-links .flip a .front,
+.access-links .flip a .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Estilo de la cara frontal */
+.access-links .flip a .front {
+    background-color: white; /* Verde hospitalario */
+    color: #005F99;
+    transform: rotateX(0) translateZ(24px);
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo de la cara posterior */
+.access-links .flip a .back {
+    background-color: #005F99; /* Fondo blanco */
+    color: white;
+    transform: rotateX(90deg) translateZ(24px);
+    border-radius: 8px;
+}
+
+/* Animación al pasar el cursor */
+.access-links .flip a:hover {
+    transform: rotateX(-90deg);
+}
+
+.access-links .flip a:hover .front {
+    background-color: white; /* Un tono más oscuro para el hover */
+}
+
+.access-links .flip a:hover .back {
+    background-color: #005F99; /* Gris claro para la cara posterior en hover */
+    color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .access-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .access-links .flip {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+}
+
+/* Estilo para la sección principal */
+.main-section {
+    text-align: center; /* Centra todo el contenido de la sección */
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: space-between; /* Alinea el logo a la izquierda y los botones a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    padding: 20px; /* Añadimos un poco de padding */
+    flex-direction: row; /* Asegura que el logo y los botones estén en una fila */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+}
+
+/* Estilo para el logo */
+.imagen-logo {
+    width: 150px; /* Ajusta el tamaño del logo (puedes cambiarlo) */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    display: block; /* Centra la imagen */
+    margin-right: auto; /* Alinea el logo a la izquierda */
+}
+
+/* Estilo para el texto en el contenedor logo */
+.logo p {
+    font-size: 15px; /* Tamaño del texto */
+    color: #005F99; /* Color del texto azul */
+    margin: 0; /* Elimina márgenes extra */
+
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Restablecer márgenes y rellenos en el body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Elimina cualquier desbordamiento horizontal */
+}
+
+/* Estilo para la sección decorativa */
+.imagen_decorativa {
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 50vh; /* Ocupa todo el alto de la ventana */
+    object-fit: cover; /* Cubre el área sin deformar la imagen */
+    display: block; /* Asegura que sea un bloque */
+    margin-left: 0; /* Elimina cualquier margen extra */
+    border-top: 10px solid #505050; /* Borde negro en la parte superir */
+    border-bottom: 10px solid #505050; /* Borde negro en la parte inferior */
+    margin-top: 40px; /* Da un poco de espacio entre los botones/logo y la imagen decorativa */
+    margin-bottom: 60px; /* Margen de 60px abajo de la imagen */
+
+}
+
+
+/* Sección general del rectángulo */
+.action-section {
+    width: 90%; /* Ancho del rectángulo */
+
+    margin: 20px auto; /* Centra horizontalmente */
+    background-color: #CDCDCD; /* Color de fondo del rectángulo */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px 0; /* Espaciado interno */
+    display: flex; /* Usamos flexbox para alinear elementos */
+    justify-content: space-around; /* Espaciado uniforme entre botones */
+    align-items: center; /* Centrado vertical */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
+}
+
+/* Estilo general para los botones */
+.action-item {
+    background: none; /* Sin fondo */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Muestra el cursor de mano */
+    text-align: center; /* Centra el texto y el icono */
+    flex: 1; /* Ocupa el mismo espacio proporcional */
+    font-family: Arial, sans-serif; /* Fuente estándar */
+    outline: none; /* Elimina contornos al hacer clic */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Animaciones suaves */
+}
+
+/* Efecto al pasar el mouse por el botón */
+.action-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo más oscuro al pasar el cursor */
+    transform: scale(0.85); /* Aumenta ligeramente el tamaño */
+}
+
+/* Iconos dentro de los botones */
+.icon {
+    font-size: 42px; /* Tamaño del icono */
+    margin-bottom: 20px; /* Espaciado entre el icono y el texto */
+}
+
+/* Texto dentro de los botones */
+.action-item p {
+    font-size: 20px; /* Tamaño del texto */
+    color: #005F99; /* Color del texto */
+    margin: 0; /* Elimina márgenes extra */
+}
+
+/* Línea divisora entre botones */
+.divider {
+    width: 2px; /* Grosor de la línea */
+    height: 50px; /* Altura de la línea */
+    background-color: #B3B3B3; /* Color de la línea */
+    margin: 0 10px; /* Espaciado horizontal */
+}
+
+/* Estilo para la sección decorativa */
+.decorative-container {
+    position: relative; /* Para posicionar el texto dentro del contenedor */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 50vh; /* Ajusta el alto de la imagen */
+    margin-top: 60px; /* Da un poco de espacio entre los botones/logo y la imagen decorativa */
+    border-top: 10px solid #505050; /* Borde negro en la parte superior */
+    border-bottom: 10px solid #505050; /* Borde negro en la parte inferior */
+    overflow: hidden; /* Oculta cualquier contenido fuera de los bordes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 130px;
+}
+
+/* Estilo de la imagen en el contenedor */
+.decorative-container img {
+    width: 100%; /* La imagen ocupa todo el ancho */
+    height: 100%; /* La imagen ocupa todo el alto */
+    object-fit: cover; /* Cubre el área sin deformar la imagen */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+}
+
+/* Estilo del texto dentro del contenedor */
+.decorative-text {
+    position: absolute; /* Posiciona el texto dentro del contenedor */
+    top: 50%; /* Centrado vertical */
+    right: 20px; /* Separación desde el borde derecho */
+    transform: translateY(-50%); /* Ajusta el texto al centro vertical */
+    color: white; /* Color del texto */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold; /* Texto en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
+    font-family: Arial, sans-serif; /* Fuente estándar */
+    text-align: justify; /* Justificar el texto */
+    line-height: 1.5; /* Espacio entre líneas */
+    max-width: 80%; /* Asegura que el texto no ocupe todo el ancho */
+
+}
+
+
+/*NOTICIAAAAAS
+
+/* Estilo general para el contenedor */
+.news-container {
+    background-color: #F0F0F0;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 120px;
+}
+
+/* Estilo del texto principal */
+.news-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los cuadros de Videos y Prensa */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Estilo para cada caja (Videos y Prensa) */
+.box {
+    background-color: #FFFFFF;
+    width: 150px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.box p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #005F99;
+    margin-bottom: 15px;
+}
+
+/* Estilo de las imágenes dentro de los cuadros */
+.image-links img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-links a:hover img {
+    transform: scale(1.05); /* Agranda la imagen al pasar el mouse */
+}
+
+/* Línea divisora entre los dos cuadros */
+.divider {
+    width: 2px;
+    background-color: #B3B3B3;
+    height: 100px;
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .box {
+        width: 80%;
+        max-width: 300px;
+    }
+}

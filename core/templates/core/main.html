@@ -1,10 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HOLA</title>
-</head>
-<body>
+{% extends 'core/base.html' %}
+{% load static %}
 
-</body>
-</html>
+
+{% block title %}Sección Principal del Hospital{% endblock %}
+
+{% block content %}
+<div class="main-section">
+    <!-- Sección del logo -->
+    <div class="logo">
+        <img src="{% static 'core/images/Logo.png' %}" alt="Logo del Hospital" class="imagen-logo"/>
+        <p>Cuidando tu salud Cuidando tu vida</p>
+    </div>
+
+    <!-- Enlaces de acceso con diseño reutilizado -->
+    <nav class="access-links">
+        <ul>
+            <li class="flip">
+                <a href="/operation">
+                    <span class="front">Personal Médico</span>
+                    <span class="back">Personal Médico</span>
+                </a>
+            </li>
+            <li class="flip">
+                <a href="/operation">
+                    <span class="front">Departamentos Médicos</span>
+                    <span class="back">Departamentos Médicos</span>
+                </a>
+            </li>
+            <li class="flip">
+                <a href="/operation">
+                    <span class="front">Atención al Cliente</span>
+                    <span class="back">Atención al Cliente</span>
+                </a>
+            </li>
+            <li class="flip">
+                <a href="/operation">
+                    <span class="front">Información Sanitaria</span>
+                    <span class="back">Información Sanitaria</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sección decorativa -->
+    <div class="pag-main">
+        <div class="decorative-section">
+            <img src="{% static 'core/images/h2.jpg' %}" alt="img_Decorativa" class="imagen_decorativa"/>
+        </div>
+    </div>
+
+    <!-- Rectángulo con divisiones de botones -->
+    <div class="action-section">
+        <button class="action-item">
+            <div class="icon">🔍</div>
+            <p>Buscar un Médico</p>
+        </button>
+        <div class="divider"></div>
+        <a href="/operation" class="action-item">
+            <div class="icon">📅</div>
+            <p>Reservar una Cita</p>
+        </a>
+        <div class="divider"></div>
+        <a href="/operation" class="action-item">
+            <div class="icon">💊</div>
+            <p>Medicamentos</p>
+        </a>
+    </div>
+
+    <div class="decorative-container">
+        <img src="{% static 'core/images/h7.jpg' %}" alt="Logo del Hospital" class="decorative-img"/>
+        <div class="decorative-text">
+            Este Hospital se esfuerza por <br/>
+            cumplir plenamente su papel y sus <br/>
+            funciones como hospital y por ofrecer <br/> una atención médica
+            de alta calidad <br/>colaborando y
+            cooperando con las <br/>instituciones médicas locales.
+        </div>
+    </div>
+
+    <div class="news-container">
+        <div class="news-text">
+            Noticias sobre la salud
+        </div>
+        <div class="content-wrapper">
+            <div class="box" id="videos">
+                <p>Videos</p>
+                <div class="image-links">
+                    <a href="https://www.ejemplo.com/videos" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'core/images/video_image.jpeg' %}" alt="Video"/>
+                    </a>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="box" id="prensa">
+                <p>Prensa</p>
+                <div class="image-links">
+                    <a href="https://www.ejemplo.com/prensa" target="_blank" rel="noopener noreferrer">
+                        <img src="{% static 'core/images/dw.jpeg' %}" alt="Prensa"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

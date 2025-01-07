@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def mi_info(request):
+    return render(request, 'users/personainfo.html')
