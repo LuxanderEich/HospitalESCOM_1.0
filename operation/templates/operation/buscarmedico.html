@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}
+
+
+{% block content %}
+  <!-- Carga de archivos CSS estáticos -->
+  <link rel="stylesheet" href="{% static 'css/BuscarMedico.css' %}">
+<div class="container">
+  <h1>Buscar un Médico</h1>
+  <div class="search-bar">
+    <label for="cedula">Cédula</label>
+    <input type="text" id="cedula" placeholder="Ingrese la cédula">
+    <button>Buscar</button>
+  </div>
+  <div class="content">
+    <div class="left-panel">
+      <div class="input-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+      </div>
+      <div class="input-group">
+        <label for="cedula-info">Cédula</label>
+        <input type="text" id="cedula-info" placeholder="Cédula">
+      </div>
+      <div class="input-group">
+        <label for="dni">DNI Trabajador</label>
+        <input type="text" id="dni" placeholder="DNI Trabajador">
+      </div>
+      <div class="input-group">
+        <label for="consultorio">Consultorio</label>
+        <input type="text" id="consultorio" placeholder="Consultorio">
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="input-group">
+        <label for="especialidad">Especialidad</label>
+        <input type="text" id="especialidad" placeholder="Especialidad">
+      </div>
+      <div class="input-group">
+        <label for="id-especialidad">ID Especialidad</label>
+        <input type="text" id="id-especialidad" placeholder="ID Especialidad">
+      </div>
+      <div class="input-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" placeholder="Descripción"></textarea>
+      </div>
+    </div>
+    <div class="reserve-panel">
+      <div class="reserve-button">
+        <div class="icon">➕</div>
+        <p>Reservar una cita</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

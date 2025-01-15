@@ -1,0 +1,100 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}**********
+
+
+{% block content %}
+
+  <!-- Carga de archivos CSS estáticos -->
+  <link rel="stylesheet" href="{% static 'css/PersonalMedico_Trabajadores.css' %}">
+
+<header>
+  <h1>Personal Médico/Trabajadores</h1>
+  <button>Buscar médico</button>
+</header>
+<main>
+  <div id="doctor-container" class="doctor-container">
+    <!-- Las tarjetas se generarán aquí -->
+  </div>
+</main>
+
+<script>
+  // Datos simulados de médicos (esto debe provenir del backend)
+  const doctorsData = [
+    {
+      name: "Dr. Juan Pérez",
+      id: "123456",
+      dni: "7891011",
+      office: "A01",
+      specialty: "Cardiología",
+      specialtyId: "001",
+      status: "Activo",
+      serviceDays: "5"
+    },
+    {
+      name: "Dra. Ana Gómez",
+      id: "654321",
+      dni: "1122334",
+      office: "B01",
+      specialty: "Dermatología",
+      specialtyId: "002",
+      status: "Inactivo",
+      serviceDays: "3"
+    },
+    {
+      name: "Dr. Carlos Rodríguez",
+      id: "789101",
+      dni: "4455667",
+      office: "C01",
+      specialty: "Pediatría",
+      specialtyId: "003",
+      status: "Activo",
+      serviceDays: "10"
+    }
+  ];
+
+  // Función para crear las tarjetas dinámicamente
+  function generateDoctorCards() {
+    const container = document.getElementById('doctor-container');
+    container.innerHTML = ''; // Limpiar contenido previo
+
+    doctorsData.forEach(doctor => {
+      const card = document.createElement('div');
+      card.classList.add('doctor-card');
+
+      card.innerHTML = `
+        <div class="columns">
+          <div class="fields">
+            <label>Nombre:</label> <span>${doctor.name}</span>
+            <label>Cédula:</label> <span>${doctor.id}</span>
+            <label>DNI Trabajador:</label> <span>${doctor.dni}</span>
+            <label>Consultorio:</label> <span>${doctor.office}</span>
+          </div>
+          <div class="fields">
+            <label>Especialidad:</label> <span>${doctor.specialty}</span>
+            <label>ID Especialidad:</label> <span>${doctor.specialtyId}</span>
+            <label>Estatus del Trabajador:</label> <span>${doctor.status}</span>
+            <label>Días en Servicio:</label> <span>${doctor.serviceDays}</span>
+          </div>
+        </div>
+        <div class="avatar">👤</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // Llamar a la función para generar las tarjetas al cargar la página
+  window.onload = generateDoctorCards;
+
+  // Si estuvieras usando una API para obtener los datos del backend, podrías hacerlo de esta manera:
+  /*
+  fetch('/api/doctors')  // URL de tu API
+    .then(response => response.json())
+    .then(data => {
+      doctorsData = data;  // Asignamos los datos al array de médicos
+      generateDoctorCards(); // Llamamos a la función para renderizar las tarjetas
+    });
+  */
+</script>
+{% endblock %}
