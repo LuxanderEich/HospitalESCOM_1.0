@@ -1,0 +1,71 @@
+.mis-datos-title {
+  font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
+  font-size: 28px; /* Tamaño de fuente mayor */
+  font-weight: bold; /* Negrita para destacar */
+  color: #005F99; /* Color elegante */
+  text-align: center; /* Alineación centrada */
+  margin: 20px 0; /* Espaciado superior e inferior */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  text-transform: capitalize; /* Primera letra de cada palabra en mayúscula */
+  margin-top: 30px;
+}
+
+.mis-datos-rectangulo {
+  width: 90%; /* Ancho del recuadro relativo al contenedor */
+  margin: 20px auto; /* Centrado horizontal con margen superior/inferior */
+  padding: 20px; /* Espaciado interno */
+  border: 2px solid #B3B3B3; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #F5F5F5; /* Fondo gris muy claro */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+/* Action Section */
+.action-section {
+  width: 90%;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: #505050 1px solid;
+  margin-bottom: 60px;
+}
+
+.action-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  font-family: Arial, sans-serif;
+  outline: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.action-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(0.85);
+}
+
+.icon {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.action-item p {
+  font-size: 20px;
+  color: #005F99;
+  margin: 0;
+}
+
+.divider {
+  width: 2px;
+  height: 50px;
+  background-color: #B3B3B3;
+  margin: 0 20px;
+}

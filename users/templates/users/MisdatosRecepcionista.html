@@ -1,0 +1,153 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Mis Datos{% endblock %}**********
+
+{% block content %}
+  <!-- Carga de archivos CSS estáticos -->
+  <link rel="stylesheet" href="{% static 'css/MisDatosRecepcionista.css' %}">
+<div class="mis-datos-container">
+  <!-- Mis Datos -->
+  <h2 class="mis-datos-title">Mis Datos</h2>
+  <div class="mis-datos-rectangulo">
+    <div class="mis-datos-content">
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>Nombre:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Fecha de Nacimiento:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>CURP:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Correo Electrónico:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>ID Trabajador:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+      <div class="mis-datos-column-right">
+        <div class="mis-datos-item">
+          <label>Teléfono Celular:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Teléfono Fijo:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>ID:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>DNI Trabajador:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dirección -->
+  <h2 class="mis-datos-title">Dirección</h2>
+  <div class="mis-datos-rectangulo">
+    <div class="mis-datos-content">
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>Calle:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Colonia:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>No. Exterior:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>No. Interior:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Código Postal:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Municipio:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>Estado:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>País:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horario -->
+  <h2 class="mis-datos-title">Horario</h2>
+  <div class="mis-datos-rectangulo">
+    <div class="mis-datos-content">
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>ID Horario:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Horario Inicio:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>Horario Fin:</label>
+          <span>No disponible</span>
+        </div>
+        <div class="mis-datos-item">
+          <label>Turno:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+      <div class="mis-datos-column">
+        <div class="mis-datos-item">
+          <label>Días:</label>
+          <span>No disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acciones -->
+  <div class="action-section">
+    <div class="action-item">
+      <div class="icon">📊</div>
+      <p>Visualizar datos</p>
+    </div>
+    <div class="divider"></div>
+    <div class="action-item">
+      <div class="icon">📆</div>
+      <p>Gestionar Citas</p>
+    </div>
+    <div class="divider"></div>
+    <div class="action-item">
+      <div class="icon">👥</div>
+      <p>Gestionar Usuarios</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

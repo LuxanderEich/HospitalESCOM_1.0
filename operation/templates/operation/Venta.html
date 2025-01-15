@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Mis Datos{% endblock %}*************
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/venta.css' %}">
+<div class="container">
+  <h1>Datos de Venta</h1>
+
+  <div class="search-bar">
+    <label for="folio-venta">Folio de la Venta</label>
+    <input type="text" id="folio-venta" placeholder="Ingrese el folio de la venta">
+    <button>Buscar</button>
+  </div>
+
+  <div class="content">
+    <table>
+      <thead>
+      <tr>
+        <th>Folio de la Venta</th>
+        <th>Medicamento</th>
+        <th>Costo Medicamento</th>
+        <th>Servicio Extra</th>
+        <th>Costo Servicio Extra</th>
+      </tr>
+      </thead>
+      <tbody>
+{% for venta in ventas %}
+    <tr>
+      <td>{{ venta.folio }}</td>
+      <td>{{ venta.medicamento }}</td>
+      <td>{{ venta.costo_medicamento }}</td>
+      <td>{{ venta.servicio_extra }}</td>
+      <td>{{ venta.costo_servicio }}</td>
+    </tr>
+{% endfor %}
+</tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

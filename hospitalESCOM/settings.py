@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import pyodbc
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-@1d_xcuenmr1v%3)r1jqmk3v701by_5*an7b31u%w28=&06dve
 DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app']
-
 
 # Application definition
 
@@ -74,21 +73,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hospitalESCOM.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "mssql",
-        "NAME": "hospital",
-        "USER": "sa",
-        "PASSWORD": "E>BJ{k:q#G",
-        "HOST": "localhost",
-        "PORT": "1433",
-        "OPTIONS": {
-            "driver": "ODBC Driver 17 for SQL Server",
-            "Trusted_Connection": "yes",
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'Django_bdHospital',
+        'USER': 'sa',  # Usuario que usaste en el script
+        'PASSWORD': 'WKPllms159',  # Contraseña que usaste en el script
+        'HOST': 'DESKTOP-U46KR8B\\SQLEXPRESS',
+        'PORT': '',  # Generalmente vacío para conexiones locales
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
         },
     },
 }
@@ -112,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -123,7 +119,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

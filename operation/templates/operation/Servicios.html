@@ -1,0 +1,128 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Mis Datos{% endblock %}*************
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/Servicios.css' %}">
+<div class="container">
+  <h1>Búsqueda de Servicios</h1>
+
+  <!-- Pestañas -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="extra">Servicios Extra</button>
+    <button class="tab-button" data-tab="alojamiento">Alojamiento/Transporte a Pacientes</button>
+    <button class="tab-button" data-tab="financiera">Ayuda Financiera</button>
+    <button class="tab-button" data-tab="venta">Venta de Dispositivos y Material Médico</button>
+    <button class="tab-button" data-tab="primeros">Primeros Auxilios</button>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <label for="id-servicio">ID del Servicio</label>
+    <input type="text" id="id-servicio" placeholder="Ingrese el ID del servicio">
+    <button id="buscar-servicio">Buscar</button>
+  </div>
+
+  <!-- Contenido de los Servicios -->
+  <div class="content">
+    <!-- Pestaña 1: Servicios Extra -->
+    <div class="tab-content extra active">
+      <h2>Servicios Extra</h2>
+      <div class="input-group">
+        <label for="descripcion-extra">Descripción del Servicio</label>
+        <input type="text" id="descripcion-extra" placeholder="Descripción del servicio" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 2: Alojamiento/Transporte -->
+    <div class="tab-content alojamiento">
+      <h2>Alojamiento/Transporte a Pacientes</h2>
+      <div class="input-group">
+        <label for="descripcion-alojamiento">Descripción del Servicio</label>
+        <input type="text" id="descripcion-alojamiento" placeholder="Descripción del servicio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="costo-alojamiento">Costo del Servicio</label>
+        <input type="text" id="costo-alojamiento" placeholder="Costo del servicio" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Ayuda Financiera -->
+    <div class="tab-content financiera">
+      <h2>Ayuda Financiera</h2>
+      <div class="input-group">
+        <label for="descripcion-financiera">Descripción del Servicio</label>
+        <input type="text" id="descripcion-financiera" placeholder="Descripción del servicio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="monto-financiera">Monto de Ayuda</label>
+        <input type="text" id="monto-financiera" placeholder="Monto de ayuda" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 4: Venta de Dispositivos -->
+    <div class="tab-content venta">
+      <h2>Venta de Dispositivos y Material Médico</h2>
+      <div class="input-group">
+        <label for="descripcion-venta">Descripción del Servicio</label>
+        <input type="text" id="descripcion-venta" placeholder="Descripción del servicio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="precio-venta">Precio del Servicio</label>
+        <input type="text" id="precio-venta" placeholder="Precio del servicio" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 5: Primeros Auxilios -->
+    <div class="tab-content primeros">
+      <h2>Primeros Auxilios</h2>
+      <div class="input-group">
+        <label for="descripcion-primeros">Descripción del Servicio</label>
+        <input type="text" id="descripcion-primeros" placeholder="Descripción del servicio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="tipo-primeros">Tipo de Primeros Auxilios</label>
+        <input type="text" id="tipo-primeros" placeholder="Tipo de servicio" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cambiar de pestaña
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', function () {
+      const tabContent = document.querySelectorAll('.tab-content');
+      const tabId = this.getAttribute('data-tab');
+
+      tabContent.forEach(content => content.classList.remove('active'));
+      document.querySelector(`.tab-content.${tabId}`).classList.add('active');
+
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Buscar servicio
+  document.getElementById('buscar-servicio').addEventListener('click', () => {
+    const servicioId = document.getElementById('id-servicio').value;
+
+    if (servicioId) {
+      fetch(`/buscar-servicio?id=${servicioId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            alert(data.error);
+          } else {
+            document.getElementById(`descripcion-${data.tipo}`).value = data.descripcion || "";
+            if (data.costo) document.getElementById(`costo-${data.tipo}`).value = data.costo || "";
+            if (data.monto) document.getElementById(`monto-${data.tipo}`).value = data.monto || "";
+            if (data.tipo_ayuda) document.getElementById(`tipo-${data.tipo}`).value = data.tipo_ayuda || "";
+          }
+        });
+    } else {
+      alert("Por favor, ingrese un ID de servicio.");
+    }
+  });
+</script>
+{% endblock %}

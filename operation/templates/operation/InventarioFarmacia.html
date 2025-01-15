@@ -1,0 +1,116 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/InventarioFarmacia.css' %}">
+<div class="container">
+  <h1>Inventario de la Farmacia</h1>
+
+  <!-- Pestañas -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="prescripcion">Medicamentos de Prescripción</button>
+    <button class="tab-button" data-tab="libre">Medicamentos de Venta Libre</button>
+    <button class="tab-button" data-tab="suplementos">Suplementos Alimenticios</button>
+  </div>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <label for="id-producto">ID del Producto</label>
+    <input type="text" id="id-producto" placeholder="Ingrese el ID del producto">
+    <button id="buscar-producto">Buscar</button>
+  </div>
+
+  <!-- Contenido de los Productos -->
+  <div class="content">
+    <!-- Pestaña 1: Medicamentos de Prescripción -->
+    <div class="tab-content prescripcion active">
+      <h2>Medicamentos de Prescripción</h2>
+      <div class="input-group">
+        <label for="nombre-prescripcion">Nombre del Medicamento</label>
+        <input type="text" id="nombre-prescripcion" placeholder="Nombre del medicamento" disabled>
+      </div>
+      <div class="input-group">
+        <label for="cantidad-prescripcion">Cantidad Disponible</label>
+        <input type="text" id="cantidad-prescripcion" placeholder="Cantidad disponible" disabled>
+      </div>
+      <div class="input-group">
+        <label for="precio-prescripcion">Precio del Producto</label>
+        <input type="text" id="precio-prescripcion" placeholder="Precio" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 2: Medicamentos de Venta Libre -->
+    <div class="tab-content libre">
+      <h2>Medicamentos de Venta Libre</h2>
+      <div class="input-group">
+        <label for="nombre-libre">Nombre del Medicamento</label>
+        <input type="text" id="nombre-libre" placeholder="Nombre del medicamento" disabled>
+      </div>
+      <div class="input-group">
+        <label for="cantidad-libre">Cantidad Disponible</label>
+        <input type="text" id="cantidad-libre" placeholder="Cantidad disponible" disabled>
+      </div>
+      <div class="input-group">
+        <label for="precio-libre">Precio del Producto</label>
+        <input type="text" id="precio-libre" placeholder="Precio" disabled>
+      </div>
+    </div>
+
+    <!-- Pestaña 3: Suplementos Alimenticios -->
+    <div class="tab-content suplementos">
+      <h2>Suplementos Alimenticios</h2>
+      <div class="input-group">
+        <label for="nombre-suplementos">Nombre del Suplemento</label>
+        <input type="text" id="nombre-suplementos" placeholder="Nombre del suplemento" disabled>
+      </div>
+      <div class="input-group">
+        <label for="cantidad-suplementos">Cantidad Disponible</label>
+        <input type="text" id="cantidad-suplementos" placeholder="Cantidad disponible" disabled>
+      </div>
+      <div class="input-group">
+        <label for="precio-suplementos">Precio del Producto</label>
+        <input type="text" id="precio-suplementos" placeholder="Precio" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cambiar de pestaña al hacer clic
+  document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', function () {
+      const tabContent = document.querySelectorAll('.tab-content');
+      const tabId = this.getAttribute('data-tab');
+
+      tabContent.forEach(content => content.classList.remove('active'));
+      document.querySelector(`.tab-content.${tabId}`).classList.add('active');
+
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Buscar producto
+  document.getElementById('buscar-producto').addEventListener('click', () => {
+    const productoId = document.getElementById('id-producto').value;
+
+    if (productoId) {
+      fetch(`/buscar-producto?id=${productoId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            alert(data.error);
+          } else {
+            document.getElementById(`nombre-${data.categoria}`).value = data.nombre || "";
+            document.getElementById(`cantidad-${data.categoria}`).value = data.cantidad || "";
+            document.getElementById(`precio-${data.categoria}`).value = data.precio || "";
+          }
+        });
+    } else {
+      alert("Por favor, ingrese un ID de producto.");
+    }
+  });
+</script>
+{% endblock %}

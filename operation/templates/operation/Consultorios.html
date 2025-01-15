@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/Consultorios.css' %}">
+<div class="container">
+  <h1>Consultorios Disponibles</h1>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <label for="consultorio-id">ID del Consultorio</label>
+    <input type="text" id="consultorio-id" placeholder="Ingrese el ID del consultorio">
+    <button id="buscar-consultorio">Buscar</button>
+  </div>
+
+  <!-- Información del consultorio -->
+  <div class="content">
+    <div class="left-panel">
+      <div class="input-group">
+        <label for="estatus-consultorio">Estatus del Consultorio</label>
+        <input type="text" id="estatus-consultorio" placeholder="Estatus del Consultorio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="pacientes-consultorio">Cantidad de Pacientes en Consultorio</label>
+        <input type="text" id="pacientes-consultorio" placeholder="Cantidad de Pacientes" disabled>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="input-group">
+        <label for="doctores-consultorio">Doctores en Consultorio</label>
+        <input type="text" id="doctores-consultorio" placeholder="Doctores en Consultorio" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('buscar-consultorio').addEventListener('click', () => {
+    const consultorioId = document.getElementById('consultorio-id').value;
+
+    if (consultorioId) {
+      // Aquí se haría una solicitud al backend para obtener la información del consultorio
+      // Simularemos una respuesta del servidor
+      if (consultorioId === "101") {
+        document.getElementById('estatus-consultorio').value = "Disponible";
+        document.getElementById('pacientes-consultorio').value = "3";
+        document.getElementById('doctores-consultorio').value = "Dr. García, Dr. López";
+      } else {
+        alert("Consultorio no encontrado.");
+      }
+    } else {
+      alert("Por favor, ingrese un ID de consultorio.");
+    }
+  });
+</script>
+{% endblock %}

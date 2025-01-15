@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/BuscarPaciente.css' %}">
+<div class="container">
+  <h1>Buscar un Paciente</h1>
+  <div class="search-bar">
+    <label for="folio-historial">ID Paciente</label>
+    <input type="text" id="id-paciente" placeholder="Ingrese el ID del Paciente">
+    <button>Buscar</button>
+  </div>
+  <div class="content">
+    <div class="left-panel">
+      <div class="input-group">
+        <label for="nombre">Nombre del Paciente</label>
+        <input type="text" id="nombre" placeholder="Nombre del Paciente" disabled>
+      </div>
+      <div class="input-group">
+        <label for="folio-receta">Folio de la Receta</label>
+        <input type="text" id="folio-receta" placeholder="Folio de la Receta" disabled>
+      </div>
+      <div class="input-group">
+        <label for="folio-cita">Folio de la Cita</label>
+        <input type="text" id="folio-cita" placeholder="Folio de la Cita" disabled>
+      </div>
+      <div class="input-group">
+        <label for="estatus-cita">Estatus de la Cita</label>
+        <input type="text" id="estatus-cita" placeholder="Estatus de la Cita" disabled>
+      </div>
+      <div class="input-group">
+        <label for="folio-historial">Folio del Historial</label>
+        <input type="text" id="folio-historial" placeholder="Folio del Historial" disabled>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="input-group">
+        <label for="fecha">Fecha</label>
+        <input type="text" id="fecha" placeholder="Fecha" disabled>
+      </div>
+      <div class="input-group">
+        <label for="horario">Horario</label>
+        <input type="text" id="horario" placeholder="Horario" disabled>
+      </div>
+      <div class="input-group">
+        <label for="consultorio">Consultorio</label>
+        <input type="text" id="consultorio" placeholder="Consultorio" disabled>
+      </div>
+      <div class="input-group">
+        <label for="especialidad">Especialidad</label>
+        <input type="text" id="especialidad" placeholder="Especialidad" disabled>
+      </div>
+      <div class="input-group">
+        <label for="doctor">Doctor</label>
+        <input type="text" id="doctor" placeholder="Doctor" disabled>
+      </div>
+      <div class="input-group">
+        <label for="cantidad-pagar">Cantidad a Pagar</label>
+        <input type="text" id="cantidad-pagar" placeholder="Cantidad a Pagar" disabled>
+      </div>
+      <div class="input-group">
+        <label for="linea-pago">Línea de Pago</label>
+        <input type="text" id="linea-pago" placeholder="Línea de Pago" disabled>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

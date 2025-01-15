@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Mis Datos{% endblock %}*************
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/SeleccionDatosRecepcionista.css' %}">
+<div class="mis-datos-container">
+  <div class="mis-datos-rectangulo">
+    <h2 class="mis-datos-title">Seleccione qué datos desea visualizar</h2>
+    <div class="action-section">
+      <div class="action-item">
+        <div class="icon">👨‍⚕️</div>
+        <p>Doctores</p>
+      </div>
+      <div class="divider"></div>
+      <div class="action-item">
+        <div class="icon">🧑‍🦰</div>
+        <p>Pacientes</p>
+      </div>
+      <div class="divider"></div>
+      <div class="action-item">
+        <div class="icon">🏥</div>
+        <p>Consultorios</p>
+      </div>
+      <div class="divider"></div>
+      <div class="action-item">
+        <div class="icon">🛠️</div>
+        <p>Servicios</p>
+      </div>
+      <div class="divider"></div>
+      <div class="action-item">
+        <div class="icon">📦</div>
+        <p>Inventario</p>
+      </div>
+      <div class="divider"></div>
+      <div class="action-item">
+        <div class="icon">💳</div>
+        <p>Ventas</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

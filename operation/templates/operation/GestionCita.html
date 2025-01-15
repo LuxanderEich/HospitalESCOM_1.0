@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/GestionCitas.css' %}">
+<div class="container">
+  <h1>Gestión de Citas</h1>
+
+  <div class="search-bar">
+    <label for="folio-cita">Folio de la Cita:</label>
+    <input type="text" id="folio-cita" placeholder="Ingrese el folio de la cita">
+    <button id="searchCitaButton">Buscar</button>
+  </div>
+
+  <div class="cita-info">
+    <h2>Detalles de la Cita</h2>
+    <p><strong>Nombre del Paciente:</strong> <span id="nombrePaciente"></span></p>
+    <p><strong>Fecha y Hora de la Cita:</strong> <span id="fechaHoraCita"></span></p>
+    <p><strong>Doctor(a):</strong> <span id="doctorCita"></span></p>
+    <p><strong>Motivo:</strong> <span id="motivoCita"></span></p>
+  </div>
+
+  <div class="actions">
+    <button id="cancelarCitaButton">Cancelar Cita</button>
+    <button id="asignarNuevoDoctorButton">Asignar Nuevo Doctor</button>
+  </div>
+
+  <div id="modalAsignarDoctor" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Asignar Nuevo Doctor(a)</h2>
+      <label for="nuevoDoctor">Seleccionar Doctor(a):</label>
+      <select id="nuevoDoctor">
+          {% for doctor in doctores %}
+            <option value="{{ doctor.id }}">{{ doctor.nombre }}</option>
+          {% endfor %}
+      </select>
+      <button id="confirmarAsignacion">Confirmar Asignación</button>
+    </div>
+  </div>
+
+  <div class="respuesta">
+    <h3>Respuesta del Paciente:</h3>
+    <button id="aceptarConsulta">Aceptar Consulta</button>
+    <button id="reagendarConsulta">Re-agendar Cita</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('searchCitaButton').addEventListener('click', buscarCita);
+  document.getElementById('cancelarCitaButton').addEventListener('click', cancelarCita);
+  document.getElementById('asignarNuevoDoctorButton').addEventListener('click', abrirModalAsignacion);
+
+  function buscarCita() {
+    const folioCita = document.getElementById('folio-cita').value;
+    if (folioCita === "12345") {
+      document.getElementById('nombrePaciente').textContent = "Juan Pérez";
+      document.getElementById('fechaHoraCita').textContent = "2025-01-20 10:00 AM";
+      document.getElementById('doctorCita').textContent = "Dr. Rodríguez";
+      document.getElementById('motivoCita').textContent = "Consulta General";
+    } else {
+      alert("Cita no encontrada.");
+    }
+  }
+
+  function cancelarCita() {
+    const folioCita = document.getElementById('folio-cita').value;
+    if (!folioCita) {
+      alert("Por favor, ingrese un folio de cita.");
+      return;
+    }
+    const motivoCancelacion = prompt("Ingrese el motivo de la cancelación:");
+    if (motivoCancelacion) {
+      alert(`La cita con folio ${folioCita} ha sido cancelada por el motivo: ${motivoCancelacion}.`);
+    } else {
+      alert("Debe ingresar un motivo.");
+    }
+  }
+
+  function abrirModalAsignacion() {
+    const modal = document.getElementById('modalAsignarDoctor');
+    modal.style.display = "block";
+  }
+
+  document.getElementById('closeModal').addEventListener('click', () => {
+    const modal = document.getElementById('modalAsignarDoctor');
+    modal.style.display = "none";
+  });
+
+  document.getElementById('confirmarAsignacion').addEventListener('click', () => {
+    const nuevoDoctor = document.getElementById('nuevoDoctor').value;
+    alert(`El nuevo doctor asignado es: ${nuevoDoctor}.`);
+    document.getElementById('modalAsignarDoctor').style.display = "none";
+  });
+
+  document.getElementById('aceptarConsulta').addEventListener('click', () => {
+    alert("El paciente ha aceptado la consulta con el nuevo doctor.");
+  });
+
+  document.getElementById('reagendarConsulta').addEventListener('click', () => {
+    alert("El paciente ha decidido reagendar la cita.");
+  });
+</script>
+{% endblock %}

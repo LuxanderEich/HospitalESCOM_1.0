@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/GestionUsuarios.css' %}">
+<div class="container">
+  <h1>Gestión de Alta y Baja de Usuarios</h1>
+
+  <!-- Selección del tipo de usuario -->
+  <div class="user-selection">
+    <label for="user-type">Seleccionar tipo de usuario:</label>
+    <select id="user-type">
+      {% for tipo in tipos_usuarios %}
+        <option value="{{ tipo.id }}">{{ tipo.nombre }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <!-- Información de Usuario -->
+  <div class="user-info">
+    <div class="input-group">
+      <label for="user-id">ID del Usuario</label>
+      <input type="text" id="user-id" placeholder="ID del Usuario">
+    </div>
+    <div class="input-group">
+      <label for="user-name">Nombre</label>
+      <input type="text" id="user-name" placeholder="Nombre del Usuario">
+    </div>
+    <div class="input-group">
+      <label for="user-email">Correo Electrónico</label>
+      <input type="email" id="user-email" placeholder="Correo Electrónico">
+    </div>
+  </div>
+
+  <!-- Acciones: Alta o Baja -->
+  <div class="actions">
+    <button id="alta-button" class="alta">Dar de Alta</button>
+    <button id="baja-button" class="baja">Dar de Baja</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('alta-button').addEventListener('click', () => {
+    const userType = document.getElementById('user-type').value;
+    const userId = document.getElementById('user-id').value;
+    const userName = document.getElementById('user-name').value;
+    const userEmail = document.getElementById('user-email').value;
+
+    if (userId && userName && userEmail) {
+      alert(`Usuario ${userName} (${userType}) dado de alta con éxito.`);
+    } else {
+      alert("Por favor, complete todos los campos para dar de alta al usuario.");
+    }
+  });
+
+  document.getElementById('baja-button').addEventListener('click', () => {
+    const userId = document.getElementById('user-id').value;
+
+    if (userId) {
+      const confirmBaja = confirm("¿Está seguro de que desea dar de baja a este usuario?");
+      if (confirmBaja) {
+        alert(`Usuario con ID ${userId} dado de baja con éxito.`);
+      }
+    } else {
+      alert("Por favor, ingrese el ID del usuario para darlo de baja.");
+    }
+  });
+</script>
+{% endblock %}

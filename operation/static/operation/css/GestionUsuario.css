@@ -1,0 +1,111 @@
+/* Estilo global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Selección de tipo de usuario */
+.user-selection {
+  margin-bottom: 20px;
+}
+
+.user-selection label {
+  font-weight: bold;
+}
+
+.user-selection select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Información del usuario */
+.user-info .input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botones de acción */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.actions button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 48%;
+}
+
+.alta {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.baja {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.actions button:hover {
+  opacity: 0.8;
+}
+
+/* Mensaje de confirmación */
+.confirmation-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.confirmation-message.success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.confirmation-message.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
