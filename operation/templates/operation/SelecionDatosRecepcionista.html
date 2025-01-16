@@ -1,6 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block title %}Mis Datos{% endblock %}*************
+{% block title %}Gestion Datos Recepcionista{% endblock %}*************
 
 {% block content %}
   <link rel="stylesheet" href="{% static 'operation/css/SeleccionDatosRecepcionista.css' %}">
@@ -8,35 +8,35 @@
   <div class="mis-datos-rectangulo">
     <h2 class="mis-datos-title">Seleccione qué datos desea visualizar</h2>
     <div class="action-section">
-      <div class="action-item">
+      <a href="/operation/PersonalMedico" class="action-item">
         <div class="icon">👨‍⚕️</div>
         <p>Doctores</p>
-      </div>
+      </a>
       <div class="divider"></div>
-      <div class="action-item">
+      <a href="/operation/BuscarPaciente" class="action-item">
         <div class="icon">🧑‍🦰</div>
         <p>Pacientes</p>
-      </div>
+      </a>
       <div class="divider"></div>
-      <div class="action-item">
+      <a href="/operation/Consultorios" class="action-item">
         <div class="icon">🏥</div>
         <p>Consultorios</p>
-      </div>
+      </a>
       <div class="divider"></div>
-      <div class="action-item">
+      <a href="/operation/Servicios" class="action-item">
         <div class="icon">🛠️</div>
         <p>Servicios</p>
-      </div>
+      </a>
       <div class="divider"></div>
-      <div class="action-item">
+      <a href="/operation/InventarioFarmacia" class="action-item">
         <div class="icon">📦</div>
         <p>Inventario</p>
-      </div>
+      </a>
       <div class="divider"></div>
-      <div class="action-item">
+      <a href="/operation/Venta" class="action-item">
         <div class="icon">💳</div>
         <p>Ventas</p>
-      </div>
+      </a>
     </div>
   </div>
 </div>

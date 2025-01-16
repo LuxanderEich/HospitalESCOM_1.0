@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Mis Datos{% endblock %}**********
+{% block title %}Mis Datos Recepcionista{% endblock %}**********
 
 {% block content %}
   <!-- Carga de archivos CSS estáticos -->
@@ -134,20 +134,20 @@
 
   <!-- Acciones -->
   <div class="action-section">
-    <div class="action-item">
+    <a href="/operation/SelecionDatosRecepcionista" class="action-item">
       <div class="icon">📊</div>
       <p>Visualizar datos</p>
-    </div>
+    </a>
     <div class="divider"></div>
-    <div class="action-item">
+    <a href="/operation/GestionCita" class="action-item">
       <div class="icon">📆</div>
       <p>Gestionar Citas</p>
-    </div>
+    </a>
     <div class="divider"></div>
-    <div class="action-item">
+    <a href="/operation/GestionUsuario" class="action-item">
       <div class="icon">👥</div>
       <p>Gestionar Usuarios</p>
-    </div>
+    </a>
   </div>
 </div>
 {% endblock %}

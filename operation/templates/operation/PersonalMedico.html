@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Buscar Personal Médico{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/PersonalMedico.css' %}">
+<div class="body">
+<header>
+    <h1>Personal Médico/Trabajadores</h1>
+    <button>Buscar médico</button>
+</header>
+<main>
+    <div class="doctor-container">
+        {% for doctor in doctors %}
+        <div class="doctor-card">
+            <div class="columns">
+                <div class="fields">
+                    <label>Nombre:</label> <span>{{ doctor.name }}</span>
+                    <label>Cédula:</label> <span>{{ doctor.id }}</span>
+                    <label>DNI Trabajador:</label> <span>{{ doctor.dni }}</span>
+                    <label>Consultorio:</label> <span>{{ doctor.office }}</span>
+                </div>
+                <div class="fields">
+                    <label>Especialidad:</label> <span>{{ doctor.specialty }}</span>
+                    <label>ID Especialidad:</label> <span>{{ doctor.specialtyId }}</span>
+                    <label>Estatus del Trabajador:</label> <span>{{ doctor.status }}</span>
+                    <label>Días en Servicio:</label> <span>{{ doctor.serviceDays }}</span>
+                </div>
+            </div>
+            <div class="avatar">👤</div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+</div>
+{% endblock %}

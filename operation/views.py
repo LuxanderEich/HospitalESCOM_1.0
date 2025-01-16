@@ -42,3 +42,30 @@ def buscarmedico(request):
 
 def DepMedicos(request):
     return render(request, 'operation/DepMedicos.html')
+
+def GestionCita(request):
+    return render(request, 'operation/GestionCita.html')
+
+def SelecionDatosRecepcionista(request):
+    return render(request, 'operation/SelecionDatosRecepcionista.html')
+
+def GestionUsuario(request):
+    return render(request, 'operation/GestionUsuario.html')
+
+def InventarioFarmacia(request):
+    return render(request, 'operation/InventarioFarmacia.html')
+
+def Venta(request):
+    return render(request, 'operation/Venta.html')
+
+def Servicios(request):
+    return render(request, 'operation/Servicios.html')
+
+def Consultorios(request):
+    return render(request, 'operation/Consultorios.html')
+
+def BuscarPaciente(request):
+    return render(request, 'operation/BuscarPaciente.html')
+
+def PersonalMedico(request):
+    return render(request, 'operation/PersonalMedico.html')

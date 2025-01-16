@@ -17,4 +17,14 @@ urlpatterns = [
     path("Recetas", views.Recetas, name="Recetas"),
     path("buscarmedico", views.buscarmedico, name="buscarmedico"),
     path("DepMedicos", views.DepMedicos, name="DepMedicos"),
+    path("GestionCita", views.GestionCita, name="GestionCita"),
+    path("SelecionDatosRecepcionista", views.SelecionDatosRecepcionista, name="SelecionDatosRecepcionista"),
+    path("GestionUsuario", views.GestionUsuario, name="GestionUsuario"),
+    path("InventarioFarmacia", views.InventarioFarmacia, name="InventarioFarmacia"),
+    path("Venta", views.Venta, name="Venta"),
+    path("Servicios", views.Servicios, name="Servicios"),
+    path("Consultorios", views.Consultorios, name="Consultorios"),
+    path("BuscarPaciente", views.BuscarPaciente, name="BuscarPaciente"),
+    path("PersonalMedico", views.PersonalMedico, name="PersonalMedico"),
+
 ]
