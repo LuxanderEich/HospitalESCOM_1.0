@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Modificar Datos{% endblock %}*******
+
+{% block content %}
+      <!-- Uso de la etiqueta `{% static %}` para cargar archivos estáticos -->
+      <link rel="stylesheet" href="{% static 'operation/css/ModificarDatos.css' %}">
+    <div class="modificar-datos-container">
+      <h1 class="modificar-datos-title">Modificar Datos</h1>
+      <!-- El atributo `action` usa el nombre de la URL para mayor flexibilidad -->
+      <form action="{% url 'guardar_datos' persona.id %}" method="POST">
+        <!-- Token CSRF necesario para formularios POST en Django -->
+        {% csrf_token %}
+        <div class="rectangulo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" value="{{ persona.nombre }}">
+
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" value="{{ persona.email }}">
+
+          <label for="telefono">Teléfono Celular:</label>
+          <input type="text" id="telefono" name="telefono" value="{{ persona.telefono }}">
+
+          <label for="telefonoFijo">Teléfono Fijo:</label>
+          <input type="text" id="telefonoFijo" name="telefonoFijo" value="{{ persona.telefono_fijo }}">
+
+          <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+          <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="{{ persona.fecha_nacimiento|date:'Y-m-d' }}">
+
+          <label for="curp">CURP:</label>
+          <input type="text" id="curp" name="curp" value="{{ persona.curp }}">
+
+          <h3>Dirección</h3>
+          <label for="calle">Calle:</label>
+          <input type="text" id="calle" name="calle" value="{{ persona.calle }}">
+
+          <label for="colonia">Colonia:</label>
+          <input type="text" id="colonia" name="colonia" value="{{ persona.colonia }}">
+
+          <label for="noExterior">No. Exterior:</label>
+          <input type="text" id="noExterior" name="noExterior" value="{{ persona.no_exterior }}">
+
+          <label for="noInterior">No. Interior:</label>
+          <input type="text" id="noInterior" name="noInterior" value="{{ persona.no_interior }}">
+
+          <label for="codigoPostal">Código Postal:</label>
+          <input type="text" id="codigoPostal" name="codigoPostal" value="{{ persona.codigo_postal }}">
+
+          <label for="municipio">Municipio:</label>
+          <input type="text" id="municipio" name="municipio" value="{{ persona.municipio }}">
+
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" name="estado" value="{{ persona.estado }}">
+
+          <label for="pais">País:</label>
+          <input type="text" id="pais" name="pais" value="{{ persona.pais }}">
+
+          <button type="submit" class="action-button">Guardar Cambios</button>
+        </div>
+      </form>
+    </div>
+{% endblock %}
