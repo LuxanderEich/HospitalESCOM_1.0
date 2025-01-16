@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Cunsulta Citas{% endblock %}*******
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'operation/css/ConsultarCita.css' %}">
+<div class="consultar-citas-container">
+  <h2 class="consultar-citas-title">Citas</h2>
+
+  <!-- Iterar sobre las citas -->
+  {% if citas %}
+    {% for cita in citas %}
+      <div class="cita-card">
+        <div class="cita-column-left">
+          <p><strong>ID Cita:</strong> {{ cita.id }}</p>
+          <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+          <p><strong>Horario:</strong> {{ cita.horario }}</p>
+          <p><strong>Cédula Doctor:</strong> {{ cita.cedula_doctor }}</p>
+          <p><strong>ID Paciente:</strong> {{ cita.id_paciente }}</p>
+          <p><strong>ID Receta:</strong> {{ cita.id_receta }}</p>
+        </div>
+        <div class="divider"></div>
+        <div class="cita-column-right">
+          <a href="" class="consultar-receta-button">
+            <div class="icon">📄</div>
+          </a>
+          <p class="consultar-receta-text">Consultar Receta</p>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <!-- Sin citas (si no hay citas) -->
+    <div class="no-citas">
+      <p>Sin citas registradas :(</p>
+      <a href="" class="reservar-cita-button">Agende una</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -9,5 +9,7 @@ urlpatterns = [
     path("login", views.login, name="login"),
     path("agendar_cita", views.agendar_cita, name="agendar_cita"),
     path("ContactUsPage", views.ContactUsPage, name="ContactUsPage"),
-
+    path("AppointmentPage", views.AppointmentPage, name="AppointmentPage"),
+    path("BuscarMedicamento", views.BuscarMedicamento, name="BuscarMedicamento"),
+    path("ConsultarCita", views.ConsultarCita, name="ConsultarCita"),
 ]

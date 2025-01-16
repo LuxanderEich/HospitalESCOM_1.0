@@ -18,3 +18,12 @@ def agendar_cita(request):
 
 def ContactUsPage(request):
     return render(request, 'operation/ContactUsPage.html')
+
+def AppointmentPage(request):
+    return render(request, 'operation/AppointmentPage.html')
+
+def BuscarMedicamento(request):
+    return render(request, 'operation/BuscarMedicamento.html')
+
+def ConsultarCita(request):
+    return render(request, 'operation/ConsultarCita.html')

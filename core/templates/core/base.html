@@ -1,72 +1,1 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Hospital{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'core/css/Header.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/Footer.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/PagMain.css' %}">
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-container">
-            <a href="/">
-                <img src="{% static 'core/images/Logo.png' %}" alt="Logo del Hospital" class="logo"/>
-            </a>
-        </div>
-        <nav class="nav">
-            <ul>
-                <li class="flip">
-                    <a href="operation/registro">
-                        <span class="front">Crear Cuenta</span>
-                        <span class="back">Crear Cuenta</span>
-                    </a>
-                </li>
-                <li class="flip">
-                    <a href="operation/login">
-                        <span class="front">Iniciar Sesión</span>
-                        <span class="back">Iniciar Sesión</span>
-                    </a>
-                </li>
-                <li class="flip">
-                    <a href="/mis-datos">
-                        <span class="front">Mis Datos</span>
-                        <span class="back">Mis Datos</span>
-                    </a>
-                </li>
-                <li class="flip">
-                    <a href="operation/ContactUsPage">
-                        <span class="front">Contacto</span>
-                        <span class="back">Contacto</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Contenido dinámico -->
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="{% static 'core/images/Logo.png' %}" alt="Logo del Hospital" class="footer-imagen-logo" />
-                <div class="footer-slogan">
-                    Cuidando tu salud, cuidando tu vida.
-                </div>
-            </div>
-            <div class="footer-social">
-                <p><a href="https://facebook.com/hospital" target="_blank">https://facebook.com/hospital</a></p>
-                <p><a href="https://twitter.com/hospital" target="_blank">https://twitter.com/hospital</a></p>
-                <p><a href="https://instagram.com/hospital" target="_blank">https://instagram.com/hospital</a></p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% load static %}<!DOCTYPE html><html lang="es"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>{% block title %}Hospital{% endblock %}</title>    <link rel="stylesheet" href="{% static 'core/css/Header.css' %}">    <link rel="stylesheet" href="{% static 'core/css/Footer.css' %}">    <link rel="stylesheet" href="{% static 'core/css/PagMain.css' %}"></head><body>    <!-- Header -->    <header class="header">        <div class="logo-container">            <a href="/">                <img src="{% static 'core/images/Logo.png' %}" alt="Logo del Hospital" class="logo"/>            </a>        </div>        <nav class="nav">            <ul>                <li class="flip">                    <a href="operation/registro">                        <span class="front">Crear Cuenta</span>                        <span class="back">Crear Cuenta</span>                    </a>                </li>                <li class="flip">                    <a href="operation/login">                        <span class="front">Iniciar Sesión</span>                        <span class="back">Iniciar Sesión</span>                    </a>                </li>                <li class="flip">                    <a href="users/users/mi_info">                        <span class="front">Mis Datos</span>                        <span class="back">Mis Datos</span>                    </a>                </li>                <li class="flip">                    <a href="operation/ContactUsPage">                        <span class="front">Contacto</span>                        <span class="back">Contacto</span>                    </a>                </li>            </ul>        </nav>    </header>    <!-- Contenido dinámico -->    <main>        {% block content %}{% endblock %}    </main>    <!-- Footer -->    <footer class="footer">        <div class="footer-content">            <div class="footer-logo">                <img src="{% static 'core/images/Logo.png' %}" alt="Logo del Hospital" class="footer-imagen-logo" />                <div class="footer-slogan">                    Cuidando tu salud, cuidando tu vida.                </div>            </div>            <div class="footer-social">                <p><a href="https://facebook.com/hospital" target="_blank">https://facebook.com/hospital</a></p>                <p><a href="https://twitter.com/hospital" target="_blank">https://twitter.com/hospital</a></p>                <p><a href="https://instagram.com/hospital" target="_blank">https://instagram.com/hospital</a></p>            </div>        </div>    </footer></body></html>
