@@ -1,0 +1,105 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Receta Médica{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'operation/css/RecetasDoctor.css' %}">
+
+<div class="receta-container">
+  <h2 class="receta-title">Receta de la Consulta:</h2>
+  <div class="receta-header">
+    <div>
+      <p>ID Cita: {{ cita.id }}</p>
+      <p>Fecha: {{ cita.fecha }}</p>
+      <p>Horario: {{ cita.horario }}</p>
+    </div>
+    <div>
+      <p>Cédula Doctor: {{ cita.doctor_cedula }}</p>
+      <p>ID Paciente: {{ cita.paciente_id }}</p>
+      <p>Estatus: {{ cita.estatus }}</p>
+    </div>
+    <div class="pdf-button">
+      <span class="pdf-icon">&#128462;</span>
+      <span>Descargar PDF</span>
+    </div>
+  </div>
+  <hr>
+  <div class="receta-diagnostico">
+    <p>ID Diagnóstico: {{ diagnostico.id }}</p>
+    <p>ID Tratamiento: {{ tratamiento.id }}</p>
+    <p>Consultorio: {{ cita.consultorio }}</p>
+    <p>Descripción: {{ tratamiento.descripcion }}</p>
+  </div>
+
+  <div class="receta-section">
+    <h3>Agregar Medicamentos</h3>
+    <form id="form-medicamento">
+      <label for="medicamento-id">ID Medicamento:</label>
+      <input type="text" id="medicamento-id" name="medicamento-id" required>
+      <button type="button" id="agregar-medicamento">Agregar</button>
+      <button type="button" id="eliminar-medicamento">Eliminar Selección</button>
+    </form>
+  </div>
+
+  <div class="receta-section">
+    <h3>Medicamentos</h3>
+    <table id="tabla-medicamentos">
+      <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Descripción</th>
+        <th>Costo</th>
+        <th>Inventario</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for medicamento in medicamentos %}
+      <tr>
+        <td>{{ medicamento.tipo }}</td>
+        <td>{{ medicamento.descripcion }}</td>
+        <td>{{ medicamento.costo }}</td>
+        <td>{{ medicamento.inventario }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="receta-section">
+    <h3>Agregar Servicios</h3>
+    <form id="form-servicio">
+      <label for="servicio-id">ID Servicio:</label>
+      <input type="text" id="servicio-id" name="servicio-id" required>
+      <button type="button" id="agregar-servicio">Agregar</button>
+      <button type="button" id="eliminar-servicio">Eliminar Selección</button>
+    </form>
+  </div>
+
+  <div class="receta-section">
+    <h3>Servicios</h3>
+    <table id="tabla-servicios">
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Costo</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for servicio in servicios %}
+      <tr>
+        <td>{{ servicio.nombre }}</td>
+        <td>{{ servicio.tipo }}</td>
+        <td>{{ servicio.costo }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="receta-footer">
+    <button type="button" id="guardar-receta">Guardar Receta</button>
+  </div>
+</div>
+{% endblock %}

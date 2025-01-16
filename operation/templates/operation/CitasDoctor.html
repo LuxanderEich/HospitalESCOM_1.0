@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Consultar Citas Doctor{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'operation/css/CitasDoctor.css' %}">
+
+<div class="consultar-citas-container">
+  <h2 class="consultar-citas-title">Citas</h2>
+
+  <!-- Iterar sobre las citas dinámicas -->
+  {% for cita in citas %}
+  <div class="cita-card">
+    <div class="cita-column-left">
+      <p><strong>ID Cita:</strong> {{ cita.id }}</p>
+      <p><strong>Fecha:</strong> {{ cita.fecha }}</p>
+      <p><strong>Horario:</strong> {{ cita.horario }}</p>
+      <p><strong>Cédula Doctor:</strong> {{ cita.doctor_cedula }}</p>
+      <p><strong>ID Paciente:</strong> {{ cita.paciente_id }}</p>
+      <p><strong>ID Receta:</strong> {{ cita.receta_id }}</p>
+    </div>
+    <div class="divider"></div>
+    <div class="cita-column-right">
+      <a href="/operation/RecetasDoctor" class="consultar-receta-button">
+        <div class="icon">📄</div>
+      </a>
+      <p class="consultar-receta-text">Modificar Receta</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

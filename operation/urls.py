@@ -26,5 +26,6 @@ urlpatterns = [
     path("Consultorios", views.Consultorios, name="Consultorios"),
     path("BuscarPaciente", views.BuscarPaciente, name="BuscarPaciente"),
     path("PersonalMedico", views.PersonalMedico, name="PersonalMedico"),
-
+    path("RecetasDoctor", views.RecetasDoctor, name="RecetasDoctor"),
+    path("CitasDoctor", views.CitasDoctor, name="CitasDoctor"),
 ]

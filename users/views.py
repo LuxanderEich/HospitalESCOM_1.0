@@ -6,3 +6,6 @@ def mi_info(request):
 
 def MisdatosRecepcionista(request):
     return render(request, 'users/MisdatosRecepcionista.html')
+
+def DatosDoctor(request):
+    return render(request, 'users/DatosDoctor.html')

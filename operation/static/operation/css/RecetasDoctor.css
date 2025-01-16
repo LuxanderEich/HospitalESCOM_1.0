@@ -1,0 +1,131 @@
+:root {
+  --primary-color: #005F99;
+  --secondary-color: #28a745;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --border-color: #ccc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.receta-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: var(--background-color);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.receta-title {
+  text-align: center;
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.receta-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.receta-header div {
+  flex: 1;
+}
+
+.pdf-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pdf-icon {
+  margin-right: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 20px 0;
+}
+
+.receta-section {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+form input {
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #505050;
+}
+
+.receta-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#guardar-receta {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#guardar-receta:hover {
+  background-color: #505050;
+}

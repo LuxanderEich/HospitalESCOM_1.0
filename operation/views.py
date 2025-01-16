@@ -69,3 +69,9 @@ def BuscarPaciente(request):
 
 def PersonalMedico(request):
     return render(request, 'operation/PersonalMedico.html')
+
+def RecetasDoctor(request):
+    return render(request, 'operation/RecetasDoctor.html')
+
+def CitasDoctor(request):
+    return render(request, 'operation/CitasDoctor.html')

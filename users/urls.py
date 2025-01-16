@@ -6,5 +6,6 @@ app_name = 'users'
 
 urlpatterns = [
     path('mi_info', views.mi_info, name='info'),
-    path('MisdatosRecepcionista', views.MisdatosRecepcionista, name='MisdatosRecepcionista')
+    path('MisdatosRecepcionista', views.MisdatosRecepcionista, name='MisdatosRecepcionista'),
+    path('DatosDoctor', views.DatosDoctor, name='DatosDoctor'),
 ]
