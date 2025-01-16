@@ -1,0 +1,99 @@
+/* Contenedor principal */
+.info-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado principal */
+.info-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.info-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Razones para elegirnos */
+.info-reasons {
+  margin-bottom: 30px;
+}
+
+.info-reasons h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #005F99;
+}
+
+.info-reasons ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-reasons li {
+  margin-bottom: 8px;
+}
+
+/* Departamentos médicos */
+.info-departments {
+  margin-bottom: 30px;
+}
+
+.info-departments h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #005F99;
+}
+
+.info-departments ul {
+  list-style: square;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-departments li {
+  margin-bottom: 8px;
+}
+
+/* Botón de reserva de cita */
+.reserva-cita {
+  text-align: center;
+}
+
+.reserva-cita-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reserva-cita-button:hover {
+  background-color: #0056b3;
+}

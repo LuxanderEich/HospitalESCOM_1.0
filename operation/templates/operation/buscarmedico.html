@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Nueva Cita{% endblock %}*******
+{% block title %}Buscar Medico{% endblock %}*******
 
 {% block content %}
   <!-- Carga de archivos CSS estáticos -->
@@ -47,10 +47,10 @@
       </div>
     </div>
     <div class="reserve-panel">
-      <div class="reserve-button">
+      <a href="/operation/agendar_cita" class="reserve-button">
         <div class="icon">➕</div>
         <p>Reservar una cita</p>
-      </div>
+      </a>
     </div>
   </div>
 </div>

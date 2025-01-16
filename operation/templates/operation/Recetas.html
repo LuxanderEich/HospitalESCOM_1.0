@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Cunsulta Citas{% endblock %}*******
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/Recetas.css' %}">
+    <h2 class="receta-title">Receta de la Consulta:</h2>
+    <div class="receta-container">
+        <div class="receta-header">
+            <div>
+                <p>ID Cita: {{ receta.idCita }}</p>
+                <p>Fecha: {{ receta.fecha }}</p>
+                <p>Horario: {{ receta.horario }}</p>
+            </div>
+            <div>
+                <p>Cédula Doctor: {{ receta.cedulaDoctor }}</p>
+                <p>ID Paciente: {{ receta.idPaciente }}</p>
+                <p>Estatus: {{ receta.estatus }}</p>
+            </div>
+            <div class="pdf-button">
+                <span class="pdf-icon">📄</span>
+                <span>Descargar PDF</span>
+            </div>
+        </div>
+        <hr />
+        <div class="receta-diagnostico">
+            <p>ID Diagnóstico: {{ receta.idDiagnostico }}</p>
+            <p>ID Tratamiento: {{ receta.idTratamiento }}</p>
+            <p>Consultorio: {{ receta.consultorio }}</p>
+            <p>Descripción: {{ receta.descripcion }}</p>
+        </div>
+        <div class="receta-section">
+            <h3>Medicamentos</h3>
+            {% if receta.medicamentos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Costo</th>
+                        <th>Inventario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medicamento in receta.medicamentos %}
+                    <tr>
+                        <td>{{ medicamento.tipo }}</td>
+                        <td>{{ medicamento.descripcion }}</td>
+                        <td>{{ medicamento.costo }}</td>
+                        <td>{{ medicamento.inventario }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No hay medicamentos registrados.</p>
+            {% endif %}
+        </div>
+        <div class="receta-section">
+            <h3>Servicios</h3>
+            {% if receta.servicios %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for servicio in receta.servicios %}
+                    <tr>
+                        <td>{{ servicio.nombre }}</td>
+                        <td>{{ servicio.tipo }}</td>
+                        <td>{{ servicio.costo }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No hay servicios registrados.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

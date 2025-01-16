@@ -14,5 +14,7 @@ urlpatterns = [
     path("ModificarDatos", views.ModificarDatos, name="ModificarDatos"),
     path("InfoSanitaria", views.InfoSanitaria, name="InfoSanitaria"),
     path("CancelarCita", views.CancelarCita, name="CancelarCita"),
-
+    path("Recetas", views.Recetas, name="Recetas"),
+    path("buscarmedico", views.buscarmedico, name="buscarmedico"),
+    path("DepMedicos", views.DepMedicos, name="DepMedicos"),
 ]

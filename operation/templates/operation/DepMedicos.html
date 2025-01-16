@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Depto Medico{% endblock %}*******
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/DepMedicos.css' %}">
+<main class="info-container">
+    <!-- Encabezado principal -->
+    <section class="info-header">
+        <h2>Departamentos Médicos</h2>
+        <p class="intro-text">
+            En nuestro hospital, nos comprometemos a brindar atención médica integral y especializada a través de nuestros diferentes departamentos.
+            Cada uno está diseñado para satisfacer las necesidades de nuestros pacientes, con tecnología de vanguardia y un equipo médico altamente capacitado.
+        </p>
+    </section>
+
+    <!-- Razones para elegirnos -->
+    <section class="info-reasons">
+        <h3>¿Por qué elegirnos?</h3>
+        <ul>
+            <li><strong>Equipo multidisciplinario:</strong> Trabajamos en conjunto para brindar un diagnóstico preciso y un tratamiento efectivo.</li>
+            <li><strong>Tecnología avanzada:</strong> Contamos con equipos modernos para realizar estudios, diagnósticos y procedimientos.</li>
+            <li><strong>Atención personalizada:</strong> Nos esforzamos por comprender y atender las necesidades específicas de cada paciente.</li>
+        </ul>
+    </section>
+
+    <!-- Lista de departamentos -->
+    <section class="info-departments">
+        <h3>Nuestros Departamentos</h3>
+        <ul>
+            <li>Cardiología: Atención y tratamiento para enfermedades del corazón y el sistema circulatorio.</li>
+            <li>Pediatría: Cuidado especializado para niños desde recién nacidos hasta adolescentes.</li>
+            <li>Ginecología y Obstetricia: Atención a la salud de la mujer, incluyendo embarazo, parto y enfermedades relacionadas.</li>
+            <li>Traumatología y Ortopedia: Diagnóstico y tratamiento de lesiones y enfermedades del sistema musculoesquelético.</li>
+            <li>Neurología: Diagnóstico y manejo de trastornos del sistema nervioso.</li>
+            <li>Dermatología: Cuidado de la piel, cabello y uñas, además del tratamiento de enfermedades dermatológicas.</li>
+            <li>Oncología: Diagnóstico y tratamiento integral del cáncer, con un enfoque multidisciplinario.</li>
+            <li>Oftalmología: Cuidado especializado en la salud ocular y prevención de enfermedades visuales.</li>
+            <li>Psiquiatría y Psicología: Apoyo para la salud mental y emocional.</li>
+            <li>Medicina Interna: Diagnóstico y tratamiento de enfermedades en adultos con un enfoque integral.</li>
+        </ul>
+    </section>
+
+    <!-- Enlace para reservar cita -->
+    <section class="reserva-cita">
+        <a href="/operation/agendar_cita" class="reserva-cita-button">
+            📅 Reservar una Cita
+        </a>
+    </section>
+</main>
+{% endblock %}

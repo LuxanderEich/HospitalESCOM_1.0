@@ -33,3 +33,12 @@ def InfoSanitaria(request):
 
 def CancelarCita(request):
     return render(request, 'operation/CancelarCita.html')
+
+def Recetas(request):
+    return render(request, 'operation/Recetas.html')
+
+def buscarmedico(request):
+    return render(request, 'operation/buscarmedico.html')
+
+def DepMedicos(request):
+    return render(request, 'operation/DepMedicos.html')
