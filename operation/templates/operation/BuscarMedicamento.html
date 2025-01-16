@@ -1,0 +1,131 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/BuscarMedicamentos.css' %}">
+    <div class="medicamentos-page">
+        <!-- Título principal -->
+        <h1 class="title">Medicamentos</h1>
+
+        <!-- Rectángulo contenedor -->
+        <div class="container-rectangulo">
+            <!-- Formulario de ID Medicamento -->
+            <div class="form-medicamento">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="idMedicamento">ID Medicamento:</label>
+                        <input type="text" id="idMedicamento" name="id_medicamento">
+                    </div>
+                    <button type="submit" class="btn-agregar">Agregar</button>
+                </form>
+            </div>
+
+            <!-- Tabla de Medicamentos -->
+            <table class="medicamentos-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Costo</th>
+                        <th>Inventario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medicamento in medicamentos %}
+                    <tr>
+                        <td>{{ medicamento.nombre }}</td>
+                        <td>{{ medicamento.tipo }}</td>
+                        <td>{{ medicamento.descripcion }}</td>
+                        <td>{{ medicamento.costo }}</td>
+                        <td>{{ medicamento.inventario }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">No hay medicamentos disponibles.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Formulario de ID Servicio -->
+            <div class="form-servicio">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="idServicio">ID Servicio:</label>
+                        <input type="text" id="idServicio" name="id_servicio">
+                    </div>
+                    <button type="submit" class="btn-agregar">Agregar</button>
+                </form>
+            </div>
+
+            <!-- Tabla de Servicios -->
+            <table class="servicios-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for servicio in servicios %}
+                    <tr>
+                        <td>{{ servicio.nombre }}</td>
+                        <td>{{ servicio.tipo }}</td>
+                        <td>{{ servicio.costo }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3">No hay servicios disponibles.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Formulario de Datos de Compra -->
+            <div class="form-datos">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="costoTotal">Costo Total:</label>
+                        <input type="text" id="costoTotal" name="costo_total" value="{{ costo_total }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="metodoPago">Método de Pago:</label>
+                        <input type="text" id="metodoPago" name="metodo_pago" value="{{ metodo_pago }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="horaPago">Hora de Pago:</label>
+                        <input type="text" id="horaPago" name="hora_pago" value="{{ hora_pago }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaPago">Fecha:</label>
+                        <input type="text" id="fechaPago" name="fecha_pago" value="{{ fecha_pago }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="idMedicamentoCompra">ID Medicamento:</label>
+                        <input type="text" id="idMedicamentoCompra" name="id_medicamento_compra" value="{{ id_medicamento_compra }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="idServicioCompra">ID Servicio:</label>
+                        <input type="text" id="idServicioCompra" name="id_servicio_compra" value="{{ id_servicio_compra }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="idVenta">ID Venta:</label>
+                        <input type="text" id="idVenta" name="id_venta" value="{{ id_venta }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="estatus">Estatus:</label>
+                        <input type="text" id="estatus" name="estatus" value="{{ estatus }}" readonly>
+                    </div>
+                    <button type="submit" class="btn-generar-factura">Generar Factura</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

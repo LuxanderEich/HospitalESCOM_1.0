@@ -1,0 +1,91 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/ContactUsPage.css' %}">
+    <div class="contact-container">
+        <!-- Rectángulo 1 -->
+        <div class="section">
+            <h2>Contacto</h2>
+            <div class="rectangle">
+                <p><strong>Hospital:</strong> Nombre del Hospital</p>
+                <p><strong>Teléfono:</strong> 555-123-4567</p>
+                <p><strong>Correo:</strong> contacto@hospital.com</p>
+                <p><strong>Redes Sociales:</strong> Facebook | Twitter | Instagram</p>
+            </div>
+        </div>
+
+        <!-- Rectángulo 2 -->
+        <div class="section">
+            <h2>Preguntas frecuentes</h2>
+            <div class="rectangle">
+                <div class="faq-column">
+                    <h4>¿Cómo puedo agendar una cita?</h4>
+                    <p>
+                        Después de haber creado su cuenta, debe ir a la página principal y
+                        seleccionar la opción “Agendar cita”, ahí podrá escoger libremente
+                        el horario y fecha de su consulta.
+                    </p>
+                </div>
+                <div class="faq-column">
+                    <h4>¿Qué servicios están disponibles?</h4>
+                    <p>Descripción</p>
+                </div>
+                <div class="faq-column">
+                    <h4>¿Cómo modifico mis datos?</h4>
+                    <p>
+                        Después de crear su cuenta, debe ir a “Mis datos”, donde podrá corroborar
+                        y modificar si sus datos están correctos. Recuerde que es importante que
+                        los modifique al crear una cuenta.
+                    </p>
+                </div>
+                <div class="faq-column">
+                    <h4>¿Cuáles son las políticas de cancelación?</h4>
+                    <p>
+                        Si se cancelan 48 horas antes, se devolverá el 100% del pago efectuado por la consulta.<br>
+                        Si se cancelan 24 horas antes, se devolverá el 50% del pago efectuado por la consulta.<br>
+                        Si cancela después de las 24 horas, no se devolverá el pago efectuado.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rectángulo 3 -->
+        <div class="section">
+            <h2>Formulario de contacto</h2>
+            <div class="rectangle">
+                <form class="contact-form" method="post">
+                    {% csrf_token %}
+                    <label>
+                        Nombre:
+                        <input type="text" name="nombre" required>
+                    </label>
+                    <label>
+                        Apellido Materno:
+                        <input type="text" name="apmaterno" required>
+                    </label>
+                    <label>
+                        Apellido Paterno:
+                        <input type="text" name="appaterno" required>
+                    </label>
+                    <label>
+                        Correo:
+                        <input type="email" name="correo" required>
+                    </label>
+                    <label>
+                        Contraseña:
+                        <input type="password" name="contraseña" required>
+                    </label>
+                    <label>
+                        Descripción del problema:
+                        <textarea name="descripcion" required></textarea>
+                    </label>
+                    <p>Debe contar con una cuenta para atención a cliente especializada.</p>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

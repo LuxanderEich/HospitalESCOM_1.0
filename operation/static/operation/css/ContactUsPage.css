@@ -1,0 +1,85 @@
+.contact-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.rectangle {
+    background-color: #f9f9f9;
+    border: 2px solid #000000;
+    padding: 20px;
+    border-radius: 10px;
+    color: #000000;
+}
+
+.faq-column {
+    display: inline-block;
+    width: 22%;
+    margin-right: 3%;
+    vertical-align: top;
+}
+
+.faq-column h4 {
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.faq-column p {
+    font-size: 14px;
+    color: #000000;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Reduce el espacio entre los campos */
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    margin-bottom: 5px; /* Reduce el margen inferior de cada etiqueta */
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-top: 3px; /* Reduce el espacio entre el label y el campo */
+    padding: 6px; /* Reduce el relleno dentro del campo */
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite al usuario ajustar el tamaño vertical */
+}
+
+.contact-form button {
+    align-self: flex-start;
+    background-color: #005F99;
+    color: #ffffff;
+    padding: 8px 16px; /* Reduce el tamaño del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #505050;
+}
+
+.contact-form p {
+    font-size: 12px;
+    color: #505050;
+    margin: 0;
+}

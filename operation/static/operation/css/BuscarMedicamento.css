@@ -1,0 +1,126 @@
+/* Estilos generales para la página */
+.medicamentos-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del rectángulo */
+.container-rectangulo {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px; /* Ajusta este valor según el diseño */
+    border: #757575 1px solid;
+}
+
+/* Estilos para los formularios */
+.form-medicamento,
+.form-servicio,
+.form-datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* Contenedor de los campos de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho de los formularios */
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilo de los campos de entrada */
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo de los botones */
+button {
+    background-color: #005F99;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+}
+
+button:hover {
+    background-color: #505050;
+}
+
+/* Estilos de las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Estilo del encabezado de la tabla */
+th {
+    background-color: #005F99; /* Fondo azul */
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo para las filas alternas del contenido */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+}
+
+/* Estilo para las filas con contenido (que deben tener fondo blanco) */
+tr:not(:nth-child(even)) {
+    background-color: #fff; /* Fondo blanco para las filas de contenido */
+}
+
+/* Estilo de las filas al pasar el cursor (hover) */
+tr:hover {
+    background-color: #ddd; /* Resalta las filas al pasar el cursor */
+}
+
+/* Estilo del botón "Generar Factura" */
+.btn-generar-factura {
+    background-color: #005F99;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-generar-factura:hover {
+    background-color: #505050;
+}

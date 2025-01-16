@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@1d_xcuenmr1v%3)r1jqmk3v701by_5*an7b31u%w28=&06dve
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -78,16 +78,9 @@ WSGI_APPLICATION = 'hospitalESCOM.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'Django_bdHospital',
-        'USER': 'sa',  # Usuario que usaste en el script
-        'PASSWORD': 'WKPllms159',  # Contraseña que usaste en el script
-        'HOST': 'DESKTOP-U46KR8B\\SQLEXPRESS',
-        'PORT': '',  # Generalmente vacío para conexiones locales
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
+    }
 }
 
 

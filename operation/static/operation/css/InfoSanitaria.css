@@ -1,0 +1,88 @@
+.info-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.info-header {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.info-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.info-row p {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: #ddd;
+    height: auto;
+}
+
+.info-body {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 200px;
+}
+
+.info-body ul {
+    flex: 3;
+    list-style: disc;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.info-body ul li {
+    margin-bottom: 5px;
+}
+
+.reserva-cita {
+    flex: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserva-cita button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserva-cita button:hover {
+    background-color: #0056b3;
+}
+
+.divider {
+    width: 4px;
+    height: 150px;
+}

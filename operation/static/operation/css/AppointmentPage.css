@@ -1,0 +1,129 @@
+.appointment-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    position: relative; /* Asegura que el contenedor sea el punto de referencia para el apilamiento de elementos */
+}
+
+.appointment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 1; /* Establece el z-index para evitar que se sobreponga con otros elementos */
+}
+
+.cancel-button {
+    background-color: #005F99;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2; /* Asegura que el botón no se sobreponga al encabezado */
+}
+
+.appointment-form-section {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #505050;
+    z-index: 1;
+}
+
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.submit-button {
+    background-color: #005F99;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.appointment-table {
+    margin-top: 20px;
+    z-index: 0; /* Asegura que la tabla esté debajo de otros elementos */
+}
+
+.appointment-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointment-table th {
+    background-color: #005F99; /* Fondo azul para el encabezado */
+    color: white;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid white;
+}
+
+.appointment-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #005F99;
+}
+
+/* Estilo de las filas alternas (gris claro) */
+.appointment-table tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Fondo gris claro para filas pares */
+}
+
+/* Estilo de las filas impares (fondo blanco) */
+.appointment-table tr:nth-child(odd) td {
+    background-color: white; /* Fondo blanco para filas impares */
+}
+
+/* Resaltado de filas al pasar el cursor (hover) */
+.appointment-table tr:hover td {
+    background-color: #e1f2f7; /* Resalta las filas al pasar el cursor */
+}
+
+.payment-section {
+    margin-top: 20px;
+    z-index: 0; /* Mantener la sección de pago en el fondo */
+}
+
+.invoice-button {
+    background-color: #005F99;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.cancellation-policy {
+    margin-top: 20px;
+    text-align: center;
+    z-index: 0; /* Mantener esta sección en el fondo */
+}
+
+.save-button {
+    background-color: #005F99;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}

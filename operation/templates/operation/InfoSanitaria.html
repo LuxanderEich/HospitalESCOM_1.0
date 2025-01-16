@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Nueva Cita{% endblock %}*******
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'operation/css/InfoSanitaria.css' %}">
+    <div class="info-container">
+        <div class="info-header">
+            <h2>Información Sanitaria</h2>
+            <div class="info-row">
+                <p>
+                    Nuestro compromiso es ofrecerte información confiable y actualizada sobre temas de salud
+                    para ayudarte a tomar decisiones informadas y cuidar de tu bienestar. En esta sección,
+                    encontrarás recursos útiles sobre prevención, cuidados médicos y hábitos saludables.
+                </p>
+                <div class="divider"></div>
+                <p>
+                    Consulta con nuestros especialistas. Si tienes dudas o necesitas más orientación,
+                    no dudes en contactarnos o agendar una cita con uno de nuestros profesionales.
+                    Estamos aquí para ayudarte a cuidar de ti y tu familia.
+                </p>
+            </div>
+        </div>
+        <div class="info-body">
+            <ul>
+                <li>Prevención de enfermedades: Consejos y guías para evitar el desarrollo de enfermedades comunes y crónicas.</li>
+                <li>Vacunación: Información sobre las vacunas disponibles y su importancia para proteger tu salud y la de tu familia.</li>
+                <li>Salud infantil: Recomendaciones para el cuidado y desarrollo saludable de los niños.</li>
+                <li>Alimentación saludable: Guías para una dieta balanceada que promueva tu bienestar físico y mental.</li>
+                <li>Salud mental: Estrategias para manejar el estrés, la ansiedad y mantener un equilibrio emocional.</li>
+                <li>Primeros auxilios: Pasos básicos para actuar en emergencias hasta recibir atención médica.</li>
+                <li>Cuidados en el hogar: Consejos prácticos para el cuidado de pacientes en casa.</li>
+            </ul>
+
+            <div class="divider"></div>
+            <a href="{% url 'reservar_cita' %}" class="action-item">
+                <div class="icon">📅</div>
+                <p>Reservar una Cita</p>
+            </a>
+        </div>
+    </div>
+{% endblock %}

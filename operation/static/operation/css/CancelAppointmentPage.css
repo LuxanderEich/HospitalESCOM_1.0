@@ -1,0 +1,72 @@
+.appointment-container {
+    padding: 20px;
+}
+
+.appointment-header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.appointment-form-section {
+    margin-top: 30px;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-group input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.appointment-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.appointment-table th, .appointment-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.cancel-btn {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cancel-btn:hover {
+    background-color: #cc0000;
+}
+
+.cancellation-policy {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.save-button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #45a049;
+}
