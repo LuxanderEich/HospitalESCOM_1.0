@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Nueva Cita{% endblock %}*******
+{% block title %}Informacion Sanitaria{% endblock %}*******
 
 {% block content %}
     <link rel="stylesheet" href="{% static 'operation/css/InfoSanitaria.css' %}">
@@ -34,7 +34,7 @@
             </ul>
 
             <div class="divider"></div>
-            <a href="{% url 'reservar_cita' %}" class="action-item">
+            <a href="/operation/agendar_cita" class="action-item">
                 <div class="icon">📅</div>
                 <p>Reservar una Cita</p>
             </a>

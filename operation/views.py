@@ -27,3 +27,9 @@ def ConsultarCita(request):
 
 def ModificarDatos(request):
     return render(request, 'operation/ModificarDatos.html')
+
+def InfoSanitaria(request):
+    return render(request, 'operation/InfoSanitaria.html')
+
+def CancelarCita(request):
+    return render(request, 'operation/CancelarCita.html')

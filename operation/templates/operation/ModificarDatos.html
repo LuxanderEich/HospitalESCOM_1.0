@@ -1,15 +1,14 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Modificar Datos{% endblock %}*******
+{% block title %}Modificar Dato{% endblock %}*******
 
 {% block content %}
-      <!-- Uso de la etiqueta `{% static %}` para cargar archivos estáticos -->
       <link rel="stylesheet" href="{% static 'operation/css/ModificarDatos.css' %}">
     <div class="modificar-datos-container">
       <h1 class="modificar-datos-title">Modificar Datos</h1>
       <!-- El atributo `action` usa el nombre de la URL para mayor flexibilidad -->
-      <form action="{% url 'guardar_datos' persona.id %}" method="POST">
+      <form action="" method="POST">
         <!-- Token CSRF necesario para formularios POST en Django -->
         {% csrf_token %}
         <div class="rectangulo">

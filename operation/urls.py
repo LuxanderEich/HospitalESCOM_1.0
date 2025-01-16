@@ -12,4 +12,7 @@ urlpatterns = [
     path("BuscarMedicamento", views.BuscarMedicamento, name="BuscarMedicamento"),
     path("ConsultarCita", views.ConsultarCita, name="ConsultarCita"),
     path("ModificarDatos", views.ModificarDatos, name="ModificarDatos"),
+    path("InfoSanitaria", views.InfoSanitaria, name="InfoSanitaria"),
+    path("CancelarCita", views.CancelarCita, name="CancelarCita"),
+
 ]
