@@ -15,3 +15,6 @@ def login(request):
 
 def agendar_cita(request):
     return render(request, 'operation/agendar_cita.html')
+
+def ContactUsPage(request):
+    return render(request, 'operation/ContactUsPage.html')
